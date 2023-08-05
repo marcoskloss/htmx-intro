@@ -1,0 +1,10 @@
+<ul id="reminder-list">
+  <% reminders.forEach((reminder) => { %>
+    <li>
+      <span><%= reminder.content %></span>
+      <button hx-delete="<%= `/reminder/${reminder.id}` %>" 
+              hx-target="#reminder-list" 
+              hx-swap="outerHTML">delete</button>
+    </li>
+  <% }); %>
+</ul>
